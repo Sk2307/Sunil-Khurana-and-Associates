@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Clock, Send, MessageSquare, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, MessageSquare, HelpCircle, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
 import { useState, FormEvent } from 'react';
 import SectionHeader from '../components/ui/SectionHeader';
 import Button from '../components/ui/Button';
@@ -26,7 +26,7 @@ export default function Contact({ onNavigate }: ContactProps) {
     e.preventDefault();
     const subject = `New Inquiry from ${formData.name} - ${formData.service}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.service}\n\nMessage:\n${formData.message}`;
-    window.location.href = `mailto:khuranasuniladv@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:khuranasuniladvocate@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const faqs = [
@@ -59,13 +59,31 @@ export default function Contact({ onNavigate }: ContactProps) {
   return (
     <div className="flex-1 w-full">
       {/* Header Section */}
-      <section className="bg-slate-900 py-16 lg:py-24 px-4 text-center">
+      <section className="bg-slate-900 py-16 lg:py-24 px-4 flex flex-col items-center text-center">
         <SectionHeader 
           centered
           title="Contact Us"
           description="Have a legal query or need tax assistance? Our team is here to provide you with expert guidance and support."
           className="text-white"
         />
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
+          <Button 
+            variant="white" 
+            size="lg" 
+            icon={ArrowRight}
+            onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Request Consultation
+          </Button>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="text-white border-white/20 hover:bg-white/10"
+            onClick={() => window.open('https://wa.me/919215377199?text=Hello%20Sunil%20Khurana%20%26%20Associates%2C%20I%20would%20like%20to%20book%20a%20consultation%20regarding%20my%20tax%20and%20legal%20matters.', '_blank')}
+          >
+            WhatsApp Us
+          </Button>
+        </div>
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
@@ -159,7 +177,7 @@ export default function Contact({ onNavigate }: ContactProps) {
           </div>
 
           {/* Form Column */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7" id="contact-form">
             <Card className="p-8 md:p-10 shadow-xl border border-slate-100 rounded-3xl" hover={false}>
               <h2 className="text-2xl font-bold text-slate-900 mb-2">Send us a Message</h2>
               <p className="text-slate-500 mb-8">Fill out the form below and our team will get back to you within 24 hours.</p>
