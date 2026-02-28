@@ -14,7 +14,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     { label: 'Home', value: 'home' },
     { label: 'About Us', value: 'about' },
     { label: 'Calculators', value: 'calculators' },
-    { label: 'Contact', value: 'contact' },
+    { label: 'Contact Us', value: 'contact' },
   ];
 
   return (

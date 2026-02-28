@@ -62,7 +62,7 @@ export default function Contact({ onNavigate }: ContactProps) {
       <section className="bg-slate-900 py-16 lg:py-24 px-4 text-center">
         <SectionHeader 
           centered
-          title="Get in Touch"
+          title="Contact Us"
           description="Have a legal query or need tax assistance? Our team is here to provide you with expert guidance and support."
           className="text-white"
         />
@@ -80,10 +80,32 @@ export default function Contact({ onNavigate }: ContactProps) {
               </h2>
               <div className="space-y-8">
                 {[
-                  { icon: MapPin, title: 'Our Office', content: 'SCO 34-35, Kisan Bhawan, Under Fly Over, Assandh - Panipat Road. Panipat, Haryana 132103'},
-                  { icon: Phone, title: 'Phone Number', content: '+91 92153 77199', sub: 'Mon-Sat, 9am - 7pm' },
-                  { icon: Mail, title: 'Email Address', content: 'khuranasunil15@gmail.com', sub: 'khuranasuniladv@gmail.com' },
-                  { icon: Clock, title: 'Working Hours', content: 'Monday - Saturday: 09:00 AM - 07:00 PM', sub: 'Sunday: Closed' },
+                  { 
+                    icon: MapPin, 
+                    title: 'Our Office', 
+                    content: 'SCO 34-35, Kisan Bhawan, Under Fly Over, Assandh - Panipat Road. Panipat, Haryana 132103',
+                    link: 'https://www.google.com/maps/dir//Sunil+Khurana+%26+Associates,+Under+Fly+Over,+Shop+No.+35,+Kisan+Bhawan,+Assandh+-+Panipat+Rd,+Panipat,+Haryana+132103/@29.3948138,76.9433436,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390ddbb494ef56b9:0x8e30b38b674e2adf!2m2!1d76.9626396!2d29.3948102'
+                  },
+                  { 
+                    icon: Phone, 
+                    title: 'Phone Number', 
+                    content: '+91 92153 77199', 
+                    sub: 'Mon-Sat, 9am - 7pm',
+                    link: 'tel:+919215377199'
+                  },
+                  { 
+                    icon: Mail, 
+                    title: 'Email Address', 
+                    content: 'khuranasunil15@gmail.com', 
+                    sub: 'khuranasuniladvocate@gmail.com',
+                    link: 'mailto:khuranasunil15@gmail.com'
+                  },
+                  { 
+                    icon: Clock, 
+                    title: 'Working Hours', 
+                    content: 'Monday - Saturday: 09:00 AM - 07:00 PM', 
+                    sub: 'Sunday: Closed' 
+                  },
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-5">
                     <div className="shrink-0 size-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary">
@@ -91,7 +113,18 @@ export default function Contact({ onNavigate }: ContactProps) {
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900 mb-1">{item.title}</h3>
-                      <p className="text-slate-600 text-sm leading-relaxed">{item.content}</p>
+                      {item.link ? (
+                        <a 
+                          href={item.link} 
+                          target={item.link.startsWith('http') ? '_blank' : undefined}
+                          rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                          className="text-slate-600 text-sm leading-relaxed hover:text-primary transition-colors"
+                        >
+                          {item.content}
+                        </a>
+                      ) : (
+                        <p className="text-slate-600 text-sm leading-relaxed">{item.content}</p>
+                      )}
                       {item.sub && <p className="text-slate-400 text-xs mt-1">{item.sub}</p>}
                     </div>
                   </div>

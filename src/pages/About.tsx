@@ -119,7 +119,7 @@ export default function About({ onNavigate }: AboutProps) {
                   onClick={() => onNavigate('contact')}
                   className="flex h-10 items-center justify-center rounded-full bg-slate-100 px-4 text-xs font-bold text-slate-600 transition hover:bg-primary hover:text-white"
                 >
-                  Contact Page
+                  Contact Us
                 </button>
               </div>
             </div>
