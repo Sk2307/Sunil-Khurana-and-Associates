@@ -29,8 +29,8 @@ export default function About({ onNavigate }: AboutProps) {
       </section>
 
       {/* Introduction */}
-      <section className="bg-background-light px-4 py-16 lg:px-40 lg:py-24">
-        <div className="mx-auto flex max-w-7xl flex-col gap-16 lg:flex-row lg:items-center">
+      <section className="bg-background-light section-padding">
+        <div className="container-max flex flex-col gap-16 lg:flex-row lg:items-center">
           <div className="flex flex-1 flex-col gap-6">
             <SectionHeader 
               subtitle="Our Story"
@@ -72,8 +72,8 @@ export default function About({ onNavigate }: AboutProps) {
       </section>
 
       {/* Founder Section */}
-      <section className="bg-white px-4 py-16 lg:px-40 lg:py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-white section-padding">
+        <div className="container-max">
           <div className="flex flex-col-reverse gap-12 lg:flex-row lg:items-center lg:gap-20">
             <div className="flex-1">
               <div className="relative aspect-[3/4] w-full max-w-md overflow-hidden rounded-xl bg-slate-200 shadow-lg lg:mx-0">
@@ -128,8 +128,8 @@ export default function About({ onNavigate }: AboutProps) {
       </section>
 
       {/* Expertise Grid */}
-      <section className="bg-slate-50 px-4 py-16 lg:px-40 lg:py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-slate-50 section-padding">
+        <div className="container-max">
           <SectionHeader 
             centered
             subtitle="Our Expertise"

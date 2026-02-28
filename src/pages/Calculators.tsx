@@ -86,7 +86,7 @@ export default function Calculators({ onNavigate }: CalculatorsProps) {
   };
 
   return (
-    <div className="flex-1 w-full max-w-7xl mx-auto p-4 md:p-8 lg:p-12">
+    <div className="flex-1 w-full container-max py-4 md:py-8 lg:py-12">
       {/* Hero Section */}
       <div className="mb-10 flex flex-col gap-4 text-center md:text-left md:flex-row md:items-end md:justify-between">
         <SectionHeader 
@@ -159,7 +159,7 @@ export default function Calculators({ onNavigate }: CalculatorsProps) {
               <Banknote className="text-primary size-6" />
               <h2 className="text-xl font-bold">Income Details</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid-2">
               <Input 
                 label="Annual Gross Salary (₹)" 
                 value={inputs.salary} 
@@ -190,14 +190,14 @@ export default function Calculators({ onNavigate }: CalculatorsProps) {
           {/* Deductions Section - Only shown for Old Regime */}
           {taxRegime === 'old' && (
             <Card className="p-6" hover={false}>
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex-between mb-6">
                 <div className="flex items-center gap-2">
                   <Wallet className="text-primary size-6" />
                   <h2 className="text-xl font-bold">Deductions & Exemptions</h2>
                 </div>
                 <span className="text-xs font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">Old Regime Only</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid-2">
                 <Input 
                   label="Basic Deduction (80C)" 
                   value={inputs.deduction80C} 
