@@ -59,7 +59,7 @@ export default function Contact({ onNavigate }: ContactProps) {
   return (
     <div className="flex-1 w-full">
       {/* Header Section */}
-      <section className="bg-slate-900 py-16 lg:py-24 px-4 flex flex-col items-center text-center">
+      <section className="bg-slate-900 section-padding px-4 flex flex-col items-center text-center">
         <SectionHeader 
           centered
           title="Contact Us"
@@ -86,7 +86,7 @@ export default function Contact({ onNavigate }: ContactProps) {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section className="container-max section-padding">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
           {/* Contact Info Column */}
@@ -183,7 +183,7 @@ export default function Contact({ onNavigate }: ContactProps) {
               <p className="text-slate-500 mb-8">Fill out the form below and our team will get back to you within 24 hours.</p>
               
               <form className="space-y-6" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid-2">
                   <Input 
                     label="Full Name" 
                     placeholder="John Doe" 
@@ -200,7 +200,7 @@ export default function Contact({ onNavigate }: ContactProps) {
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
                   />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid-2">
                   <Input 
                     label="Phone Number" 
                     type="tel" 
@@ -240,7 +240,7 @@ export default function Contact({ onNavigate }: ContactProps) {
                 {faqs.map((faq, index) => (
                   <Card key={index} className="overflow-hidden border border-slate-200" hover={false}>
                     <button 
-                      className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+                      className="w-full px-6 py-4 flex-between text-left hover:bg-slate-50 transition-colors"
                       onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     >
                       <span className="font-bold text-slate-900">{faq.q}</span>

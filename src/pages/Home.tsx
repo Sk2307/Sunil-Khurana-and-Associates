@@ -15,14 +15,14 @@ export default function Home({ onNavigate }: HomeProps) {
       <section className="relative bg-white overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 z-0"></div>
         <div className="absolute right-0 top-0 w-1/3 h-full bg-slate-50/50 skew-x-12 translate-x-20 z-0"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="relative z-10 container-max py-16 lg:py-24">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
             <div className="flex flex-col gap-6 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 w-fit">
                 <span className="size-2 rounded-full bg-primary animate-pulse"></span>
                 <span className="text-primary text-xs font-bold uppercase tracking-wider">Trusted Since 1998</span>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.15] tracking-tight">
+              <h1 className="hero-heading">
                 Sunil Khurana & Associates <br />
                 <span className="text-primary relative inline-block">
                   Consultancy
@@ -32,7 +32,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 </span>
                 &nbsp; in Panipat
               </h1>
-              <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
+              <p className="hero-subheading max-w-lg">
                 Dedicated to providing comprehensive legal and financial solutions for individuals and businesses. Led by Advocate Sunil Khurana, we navigate the complexities of law so you don't have to.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
@@ -71,7 +71,7 @@ export default function Home({ onNavigate }: HomeProps) {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 aspect-[4/5] lg:aspect-square max-w-md mx-auto lg:max-w-none group">
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent z-10"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl inline-block">
+                  <div className="glass-card inline-block">
                     <p className="text-white font-bold text-lg">Advocate Sunil Khurana</p>
                     <p className="text-gold font-medium text-sm">Senior Consultant</p>
                   </div>
@@ -102,7 +102,7 @@ export default function Home({ onNavigate }: HomeProps) {
 
       {/* Services Section */}
       <section className="py-20 bg-background-light" id="services">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container-max">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <SectionHeader 
               subtitle="Our Expertise"
@@ -114,7 +114,7 @@ export default function Home({ onNavigate }: HomeProps) {
               <ArrowRight className="size-4" />
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid-responsive">
             <ServiceCard 
               icon={Scale}
               title="GST Compliance"
@@ -169,7 +169,7 @@ export default function Home({ onNavigate }: HomeProps) {
       {/* Why Choose Us */}
       <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container-max relative z-10">
           <SectionHeader 
             centered
             light
@@ -177,7 +177,7 @@ export default function Home({ onNavigate }: HomeProps) {
             title="Local Expertise, Global Standards"
             description="We combine deep local knowledge of Panipat's business landscape with professional standards that rival top-tier firms."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+          <div className="grid-responsive mt-16">
             {[
               { icon: MapPin, title: 'Panipat Based', desc: 'Deeply rooted in the local community with an office in the heart of the city.' },
               { icon: UserCheck, title: '25+ Years Experience', desc: 'Decades of experience handling complex tax and legal matters successfully.' },
