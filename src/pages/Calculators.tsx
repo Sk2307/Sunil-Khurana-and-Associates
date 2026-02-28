@@ -39,20 +39,20 @@ export default function Calculators({ onNavigate }: CalculatorsProps) {
     let totalDeductions = 0;
 
     if (taxRegime === 'new') {
-      // New Regime: Standard Deduction 75,000
+      // New Regime: Standard Deduction 75,000 (Budget 2025)
       totalDeductions = 75000;
       taxableIncome = Math.max(0, totalGrossIncome - totalDeductions);
       
       let tax = 0;
-      if (taxableIncome <= 700000) {
-        tax = 0; // Rebate 87A
-      } else {
-        if (taxableIncome > 1500000) tax += (taxableIncome - 1500000) * 0.30 + 150000;
-        else if (taxableIncome > 1200000) tax += (taxableIncome - 1200000) * 0.20 + 90000;
-        else if (taxableIncome > 900000) tax += (taxableIncome - 900000) * 0.15 + 45000;
-        else if (taxableIncome > 600000) tax += (taxableIncome - 600000) * 0.10 + 15000;
-        else if (taxableIncome > 300000) tax += (taxableIncome - 300000) * 0.05;
+      // Budget 2025: No tax for income up to 12 Lakh (after standard deduction)
+      if (taxableIncome > 1200000) {
+        // New Slabs (Budget 2025)
+        if (taxableIncome > 2400000) tax = (taxableIncome - 2400000) * 0.30 + 300000;
+        else if (taxableIncome > 2000000) tax = (taxableIncome - 2000000) * 0.25 + 200000;
+        else if (taxableIncome > 1600000) tax = (taxableIncome - 1600000) * 0.20 + 120000;
+        else if (taxableIncome > 1200000) tax = (taxableIncome - 1200000) * 0.15 + 60000;
       }
+      
       const cess = tax * 0.04;
       return { totalGrossIncome, totalDeductions, taxableIncome, tax: tax + cess };
     } else {
@@ -94,7 +94,7 @@ export default function Calculators({ onNavigate }: CalculatorsProps) {
           description="Estimate your tax liability with our professional, easy-to-use tools. Accurate planning starts here."
         />
         <div className="flex gap-2 justify-center md:justify-end">
-          <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">Updated for FY 2024-25</span>
+          <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">Updated for FY 2025-26</span>
         </div>
       </div>
 
@@ -319,7 +319,7 @@ export default function Calculators({ onNavigate }: CalculatorsProps) {
 
       {/* Tax Slabs Reference */}
       <div className="mt-16">
-        <h3 className="text-xl font-bold mb-6 text-slate-900">Current Tax Slabs (FY 2024-25)</h3>
+        <h3 className="text-xl font-bold mb-6 text-slate-900">Current Tax Slabs (FY 2025-26)</h3>
         <div className="overflow-x-auto rounded-xl border border-slate-200">
           <table className="w-full text-sm text-left">
             <thead className="text-xs text-slate-500 uppercase bg-slate-50">
@@ -331,11 +331,13 @@ export default function Calculators({ onNavigate }: CalculatorsProps) {
             </thead>
             <tbody className="divide-y divide-slate-200 bg-white">
               {[
-                { range: 'Up to ₹ 3,00,000', new: 'Nil', old: 'Nil (upto ₹2.5L)' },
-                { range: '₹ 3,00,001 - ₹ 6,00,000', new: '5%', old: '5% (₹2.5L - ₹5L)' },
-                { range: '₹ 6,00,001 - ₹ 9,00,000', new: '10%', old: '20% (₹5L - ₹10L)' },
-                { range: '₹ 9,00,001 - ₹ 12,00,000', new: '15%', old: '30% (> ₹10L)' },
-                { range: 'Above ₹ 15,00,000', new: '30%', old: '30%' },
+                { range: 'Up to ₹ 4,00,000', new: 'Nil', old: 'Nil (upto ₹2.5L)' },
+                { range: '₹ 4,00,001 - ₹ 8,00,000', new: '5%', old: '5% (₹2.5L - ₹5L)' },
+                { range: '₹ 8,00,001 - ₹ 12,00,000', new: '10%', old: '20% (₹5L - ₹10L)' },
+                { range: '₹ 12,00,001 - ₹ 16,00,000', new: '15%', old: '30% (> ₹10L)' },
+                { range: '₹ 16,00,001 - ₹ 20,00,000', new: '20%', old: '30%' },
+                { range: '₹ 20,00,001 - ₹ 24,00,000', new: '25%', old: '30%' },
+                { range: 'Above ₹ 24,00,000', new: '30%', old: '30%' },
               ].map((row, idx) => (
                 <tr key={idx}>
                   <td className="px-6 py-4 font-medium">{row.range}</td>
@@ -346,6 +348,7 @@ export default function Calculators({ onNavigate }: CalculatorsProps) {
             </tbody>
           </table>
         </div>
+        <p className="mt-4 text-xs text-slate-500 italic">* Under New Regime, income up to ₹ 12,00,000 is fully exempt from tax due to rebate (Budget 2025).</p>
       </div>
     </div>
   );

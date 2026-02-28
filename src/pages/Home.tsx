@@ -23,7 +23,7 @@ export default function Home({ onNavigate }: HomeProps) {
                 <span className="text-primary text-xs font-bold uppercase tracking-wider">Trusted Since 1999</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.15] tracking-tight">
-                Expert Tax & Law <br />
+                Expert Tax & Legal <br />
                 <span className="text-primary relative inline-block">
                   Consultancy
                   <svg className="absolute w-full h-3 -bottom-1 left-0 text-gold opacity-40" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
