@@ -20,7 +20,7 @@ export default function About({ onNavigate }: AboutProps) {
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-900/90 to-transparent"></div>
         <div className="relative z-20 flex max-w-4xl flex-col gap-4">
           <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Upholding Integrity,<br />Delivering Excellence
+            Sunil Khurana & Associates:<br />Upholding Integrity
           </h1>
           <p className="mx-auto max-w-2xl text-lg font-medium text-slate-200 sm:text-xl">
             Since 1999, Sunil Khurana and Associates has been the premier choice for tax consultancy and legal advisory in Panipat and the wider Haryana region.

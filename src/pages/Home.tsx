@@ -20,10 +20,10 @@ export default function Home({ onNavigate }: HomeProps) {
             <div className="flex flex-col gap-6 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 w-fit">
                 <span className="size-2 rounded-full bg-primary animate-pulse"></span>
-                <span className="text-primary text-xs font-bold uppercase tracking-wider">Trusted Since 1999</span>
+                <span className="text-primary text-xs font-bold uppercase tracking-wider">Trusted Since 1998</span>
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.15] tracking-tight">
-                Expert Tax & Legal <br />
+                Sunil Khurana & Associates <br />
                 <span className="text-primary relative inline-block">
                   Consultancy
                   <svg className="absolute w-full h-3 -bottom-1 left-0 text-gold opacity-40" fill="none" viewBox="0 0 200 9" xmlns="http://www.w3.org/2000/svg">
