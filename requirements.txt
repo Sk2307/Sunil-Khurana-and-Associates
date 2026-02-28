@@ -1,0 +1,18 @@
+# System Requirements for Sunil Khurana & Associates Web App
+
+## Software
+- Node.js >= 18.x
+- npm >= 9.x
+- Modern Web Browser (Chrome, Firefox, Safari, Edge)
+
+## Development Environment
+- Visual Studio Code (Recommended)
+- Tailwind CSS IntelliSense (VS Code Extension)
+- ESLint (VS Code Extension)
+
+## Dependencies
+- React 19.x
+- Vite 6.x
+- Tailwind CSS 4.x
+- Lucide React
+- Motion (Framer Motion)
