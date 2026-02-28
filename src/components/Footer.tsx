@@ -38,7 +38,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li><button onClick={() => onNavigate('home')} className="text-slate-500 hover:text-primary transition-colors text-sm">Home</button></li>
               <li><button onClick={() => onNavigate('about')} className="text-slate-500 hover:text-primary transition-colors text-sm">About Us</button></li>
               <li><button onClick={() => onNavigate('calculators')} className="text-slate-500 hover:text-primary transition-colors text-sm">Calculators</button></li>
-              <li><button onClick={() => onNavigate('contact')} className="text-slate-500 hover:text-primary transition-colors text-sm">Contact</button></li>
+              <li><button onClick={() => onNavigate('contact')} className="text-slate-500 hover:text-primary transition-colors text-sm">Contact Us</button></li>
             </ul>
           </div>
 
@@ -58,8 +58,15 @@ export default function Footer({ onNavigate }: FooterProps) {
             <h4 className="text-slate-900 font-bold mb-6">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-slate-500">
-                <MapPin className="text-primary size-5 mt-0.5" />
-                <span>SCO 34-35, Kisan Bhawan, Under Fly Over, Assandh - Panipat Road,<br />Panipat, Haryana 132103</span>
+                <MapPin className="text-primary size-5 mt-0.5 shrink-0" />
+                <a 
+                  href="https://www.google.com/maps/dir//Sunil+Khurana+%26+Associates,+Under+Fly+Over,+Shop+No.+35,+Kisan+Bhawan,+Assandh+-+Panipat+Rd,+Panipat,+Haryana+132103/@29.3948138,76.9433436,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390ddbb494ef56b9:0x8e30b38b674e2adf!2m2!1d76.9626396!2d29.3948102"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  SCO 34-35, Kisan Bhawan, Under Fly Over, Assandh - Panipat Road,<br />Panipat, Haryana 132103
+                </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-slate-500">
                 <Phone className="text-primary size-5" />

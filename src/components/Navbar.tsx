@@ -14,7 +14,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     { label: 'Home', value: 'home' },
     { label: 'About Us', value: 'about' },
     { label: 'Calculators', value: 'calculators' },
-    { label: 'Contact', value: 'contact' },
+    { label: 'Contact Us', value: 'contact' },
   ];
 
   return (
@@ -51,7 +51,13 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
               ))}
             </nav>
             <button 
-              onClick={() => onNavigate('contact')}
+              onClick={() => {
+                if (currentPage === 'contact') {
+                  document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  onNavigate('contact');
+                }
+              }}
               className="bg-primary hover:bg-primary-dark text-white text-sm font-bold py-2.5 px-5 rounded-lg transition-all shadow-lg shadow-primary/20 flex items-center gap-2"
             >
               <span>Consultation</span>
@@ -88,7 +94,11 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
           ))}
           <button 
             onClick={() => {
-              onNavigate('contact');
+              if (currentPage === 'contact') {
+                document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                onNavigate('contact');
+              }
               setIsMobileMenuOpen(false);
             }}
             className="w-full bg-primary text-white text-center font-bold py-3 rounded-lg"

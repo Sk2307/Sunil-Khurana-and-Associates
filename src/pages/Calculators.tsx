@@ -296,7 +296,7 @@ export default function Calculators({ onNavigate }: CalculatorsProps) {
                 <Button 
                   className="w-full" 
                   icon={Calendar}
-                  onClick={() => window.open('https://wa.me/919215377199?text=Hello%20Sunil%20Khurana%20%26%20Associates%2C%20I%20would%20like%20to%20book%20a%20consultation%20regarding%20my%20tax%20planning.', '_blank')}
+                  onClick={() => window.open('https://wa.me/919215377199?text=Hello%20Sunil%20Khurana%20%26%20Associates%2C%20I%20would%20like%20to%20book%20a%20consultation%20regarding%20my%20tax%20and%20legal%20matters.', '_blank')}
                 >
                   Book a Consultation
                 </Button>
